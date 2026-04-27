@@ -1,1 +1,12 @@
 .worktrees/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.env
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+venv/
+.venv/

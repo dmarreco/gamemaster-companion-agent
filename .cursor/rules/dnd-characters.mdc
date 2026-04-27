@@ -1,0 +1,14 @@
+---
+description: Attach the characters skill for HP, XP, conditions, and character tracking
+globs:
+alwaysApply: false
+---
+
+Attach and follow `skills/characters/SKILL.md` when the user mentions any of:
+- damage taken, healing, hit points, HP
+- conditions (poisoned, stunned, prone, etc.)
+- spell slots, class resources, second wind, action surge
+- experience points, XP, leveling up
+- inventory changes, items, equipment
+- party status, character status summary
+- short rest, long rest

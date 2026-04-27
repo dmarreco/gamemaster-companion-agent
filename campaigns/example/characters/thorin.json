@@ -1,0 +1,100 @@
+{
+  "name": "Thorin Ironforge",
+  "player": "Daniel",
+  "class": "Fighter",
+  "subclass": "Battle Master",
+  "level": 3,
+  "race": "Mountain Dwarf",
+  "background": "Soldier",
+  "alignment": "Lawful Good",
+  "xp": 900,
+  "xp_next_level": 2700,
+  "ability_scores": {
+    "strength": 17,
+    "dexterity": 12,
+    "constitution": 16,
+    "intelligence": 10,
+    "wisdom": 13,
+    "charisma": 9
+  },
+  "proficiency_bonus": 2,
+  "hp": {
+    "current": 28,
+    "max": 34,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": 3,
+    "remaining": 2,
+    "die": "d10"
+  },
+  "armor_class": 18,
+  "speed": 25,
+  "initiative": 1,
+  "saving_throws": {
+    "proficient": ["strength", "constitution"]
+  },
+  "skills": {
+    "proficient": ["athletics", "intimidation", "perception", "survival"],
+    "expertise": []
+  },
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "spell_slots": {},
+  "class_resources": {
+    "action_surge": { "max": 1, "remaining": 1 },
+    "second_wind": { "max": 1, "remaining": 0 },
+    "superiority_dice": { "max": 4, "remaining": 3, "die": "d8" }
+  },
+  "attacks": [
+    {
+      "name": "Battleaxe",
+      "type": "melee",
+      "attack_bonus": 5,
+      "damage": "1d8+3",
+      "damage_type": "slashing",
+      "properties": ["versatile (1d10)"]
+    },
+    {
+      "name": "Hand Crossbow",
+      "type": "ranged",
+      "attack_bonus": 3,
+      "damage": "1d6+1",
+      "damage_type": "piercing",
+      "range": "30/120",
+      "properties": ["light", "loading"]
+    }
+  ],
+  "equipment": [
+    "Battleaxe",
+    "Hand crossbow (20 bolts)",
+    "Chain mail",
+    "Shield",
+    "Explorer's pack",
+    "50 gp"
+  ],
+  "features": [
+    "Fighting Style: Defense",
+    "Second Wind",
+    "Action Surge (1/rest)",
+    "Battle Master: Combat Superiority (4d8)",
+    "Maneuvers: Disarming Attack, Menacing Attack, Trip Attack",
+    "Know Your Enemy"
+  ],
+  "proficiencies": {
+    "armor": ["light", "medium", "heavy", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": ["playing card set"],
+    "languages": ["Common", "Dwarvish"]
+  },
+  "personality": {
+    "traits": "I face problems head-on. A simple, direct solution is best.",
+    "ideals": "Responsibility. I do what I must and face consequences.",
+    "bonds": "Those who fight beside me are worth dying for.",
+    "flaws": "I obey the law even if it causes misery."
+  },
+  "notes": "Thorin has a scar over his left eye from the Battle of Greenfields."
+}

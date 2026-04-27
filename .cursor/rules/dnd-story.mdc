@@ -1,0 +1,14 @@
+---
+description: Attach the story skill for narrative, NPC, session, and plot requests
+globs:
+alwaysApply: false
+---
+
+Attach and follow `skills/story/SKILL.md` when the user asks about:
+- NPC dialogue, reactions, motivations, or behavior
+- "What happens next?", plot hooks, encounter ideas
+- Session recap or "previously on..."
+- World-building: locations, factions, lore
+- End of session log writing
+- Story arc development, foreshadowing, consequences
+- "Did the party ever...?" or "What did we decide about...?"
