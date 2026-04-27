@@ -11,6 +11,10 @@ build/
 venv/
 .venv/
 
+# Campaign source extracts from PDFs — third-party copyrighted content
+# Regenerate with: python3 scripts/pdf_to_campaign.py <pdf> campaigns/<name>/source/
+campaigns/*/source/
+
 # Ruleset SRD data files — third-party content (CC BY 4.0), not committed to git
 # Run: python3 scripts/download_ruleset.py dnd5e-2014
 rulesets/dnd5e-2014/conditions.md
