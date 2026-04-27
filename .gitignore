@@ -10,6 +10,7 @@ build/
 .pytest_cache/
 venv/
 .venv/
+tmp/
 
 # Campaign source extracts from PDFs — third-party copyrighted content
 # Regenerate with: python3 scripts/pdf_to_campaign.py <pdf> campaigns/<name>/source/

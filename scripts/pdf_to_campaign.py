@@ -13,7 +13,8 @@ Options:
     --max-heading-size FLOAT   Only treat fonts smaller than this as headings (default: 999)
     --inspect                  Print font size statistics without converting (use to calibrate)
     --single-file              Output everything to a single markdown file instead of splitting
-    --campaign NAME            Campaign folder name to create (uses new_campaign.py template)
+    --split-level N            Only split at heading level ≤ N (1=only top-level, 2=top two levels).
+                               Default: 1. Increase if you get too many small files.
 
 Example workflow:
     # 1. Inspect font sizes to calibrate heading detection
@@ -135,18 +136,23 @@ def blocks_to_markdown(blocks: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def split_into_chapters(blocks: list[dict]) -> list[tuple[str, list[dict]]]:
+def split_into_chapters(blocks: list[dict], split_level: int = 1) -> list[tuple[str, list[dict]]]:
     """
-    Split blocks at every level-1 heading.
+    Split blocks at headings of the given level or higher (lower number = more important).
     Returns list of (chapter_title, blocks) tuples.
-    The first group captures everything before the first heading.
+    split_level=1 splits only at h1, split_level=2 splits at h1 and h2, etc.
     """
     chapters: list[tuple[str, list[dict]]] = []
     current_title = "front-matter"
     current_blocks: list[dict] = []
 
     for block in blocks:
-        if block["type"] == "heading" and block["level"] == 1:
+        is_split_heading = (
+            block["type"] == "heading"
+            and block["level"] <= split_level
+            and len(block["text"].strip()) >= 3  # skip decorative drop-caps / single letters
+        )
+        if is_split_heading:
             if current_blocks:
                 chapters.append((current_title, current_blocks))
             current_title = block["text"]
@@ -160,7 +166,7 @@ def split_into_chapters(blocks: list[dict]) -> list[tuple[str, list[dict]]]:
     return chapters
 
 
-def convert(pdf_path: Path, out_dir: Path, min_heading: float, max_heading: float, single_file: bool) -> None:
+def convert(pdf_path: Path, out_dir: Path, min_heading: float, max_heading: float, single_file: bool, split_level: int = 1) -> None:
     print(f"\nOpening {pdf_path.name} ({pdf_path.stat().st_size // (1024*1024)}MB)...")
     doc = fitz.open(str(pdf_path))
     print(f"  {len(doc)} pages")
@@ -179,7 +185,7 @@ def convert(pdf_path: Path, out_dir: Path, min_heading: float, max_heading: floa
         out_file.write_text(md, encoding="utf-8")
         print(f"\n✅ Written: {out_file} ({out_file.stat().st_size // 1024}KB)")
     else:
-        chapters = split_into_chapters(blocks)
+        chapters = split_into_chapters(blocks, split_level=split_level)
         print(f"\n  {len(chapters)} chapters detected:")
         written = []
         for i, (title, chapter_blocks) in enumerate(chapters, 1):
@@ -239,6 +245,8 @@ def main():
                         help="Print font statistics without converting")
     parser.add_argument("--single-file", action="store_true",
                         help="Write everything to a single markdown file")
+    parser.add_argument("--split-level", type=int, default=1,
+                        help="Only split into new files at heading level ≤ N (default: 1 = top-level only)")
     args = parser.parse_args()
 
     pdf_path = Path(args.pdf)
@@ -262,7 +270,7 @@ def main():
     else:
         min_heading = args.min_heading_size
 
-    convert(pdf_path, out_dir, min_heading, args.max_heading_size, args.single_file)
+    convert(pdf_path, out_dir, min_heading, args.max_heading_size, args.single_file, args.split_level)
 
 
 if __name__ == "__main__":
