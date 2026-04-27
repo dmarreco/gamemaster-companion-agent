@@ -1,0 +1,104 @@
+{
+  "name": "Sszek",
+  "player": "Player 1",
+  "class": "Fighter",
+  "subclass": "Hunter (Dark Sun)",
+  "level": 1,
+  "race": "Thri-Kreen",
+  "background": "Gladiator",
+  "alignment": "Chaotic Good",
+  "xp": 150,
+  "xp_next_level": 300,
+  "ability_scores": {
+    "strength": 18,
+    "dexterity": 20,
+    "constitution": 14,
+    "intelligence": 10,
+    "wisdom": 16,
+    "charisma": 12
+  },
+  "proficiency_bonus": 2,
+  "hp": {
+    "current": 12,
+    "max": 12,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": 1,
+    "remaining": 1,
+    "die": "d10"
+  },
+  "armor_class": 14,
+  "speed": 35,
+  "initiative": 5,
+  "saving_throws": {
+    "proficient": ["strength", "constitution"]
+  },
+  "skills": {
+    "proficient": ["athletics", "perception", "survival", "stealth"],
+    "expertise": []
+  },
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "spell_slots": {},
+  "class_resources": {
+    "second_wind": { "max": 1, "remaining": 1 }
+  },
+  "attacks": [
+    {
+      "name": "Javelin",
+      "type": "ranged/melee",
+      "attack_bonus": 6,
+      "damage": "1d6+4",
+      "damage_type": "piercing",
+      "range": "30/120",
+      "properties": ["thrown", "wooden — may break on critical hits vs hard targets"]
+    },
+    {
+      "name": "Bite",
+      "type": "melee",
+      "attack_bonus": 6,
+      "damage": "1d6+4",
+      "damage_type": "piercing",
+      "properties": ["natural weapon", "can bite restrained or prone targets as bonus action"]
+    },
+    {
+      "name": "Claw",
+      "type": "melee",
+      "attack_bonus": 6,
+      "damage": "1d4+4",
+      "damage_type": "slashing",
+      "properties": ["natural weapon"]
+    }
+  ],
+  "equipment": [
+    "4× Javelin (bone/obsidian tip)",
+    "Hunting knife",
+    "Light leather wrap (partial armor)",
+    "Stolen water skin"
+  ],
+  "features": [
+    "Fighting Style: Archery (+2 to ranged attack rolls)",
+    "Second Wind (1d10+1 healing, 1/rest)",
+    "Thri-Kreen: Multiple limbs (two extra claws for off-hand grapples)",
+    "Thri-Kreen: Standing jump x2 distance",
+    "Thri-Kreen: Darkvision 60ft",
+    "Thri-Kreen: Does not need sleep"
+  ],
+  "proficiencies": {
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "languages": ["Thri-Kreen", "Common (broken)"]
+  },
+  "personality": {
+    "traits": "Hyper-alert. Head tilts at the slightest sound. Speaks in terse bursts.",
+    "ideals": "The pack survives. Individuals are expendable. But these ones are pack now.",
+    "bonds": "Was a desert hunter before capture. Knows the Tablelands. Will lead home.",
+    "flaws": "Cannot fully trust humans or demi-humans. Acts alone when patience fails."
+  },
+  "notes": "Stats reconstructed from session log — verify with player. Shared attribute array (20,18,16,14,12,10) assigned to hunter archetype. Sszek passed Charisma check (recruit slaves) and Intimidation (Zareth). DEX 20 reflects Thri-Kreen natural agility."
+}

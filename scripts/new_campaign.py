@@ -3,10 +3,11 @@
 Scaffolds a new campaign directory under campaigns/.
 
 Usage:
-    python scripts/new_campaign.py <campaign-name> <ruleset>
+    python scripts/new_campaign.py <campaign-name> <ruleset> [--setting <setting-name>]
 
 Example:
     python scripts/new_campaign.py curse-of-strahd dnd5e-2024
+    python scripts/new_campaign.py freedom-one-shot dnd5e-2014 --setting dark-sun
 """
 
 import argparse
@@ -70,13 +71,19 @@ FACTIONS_MD_TEMPLATE = """\
 """
 
 
-def create_campaign(name: str, ruleset: str, campaigns_dir: Path = None) -> Path:
+def create_campaign(
+    name: str,
+    ruleset: str,
+    setting: str = None,
+    campaigns_dir: Path = None,
+) -> Path:
     """
     Creates a new campaign directory structure.
 
     Args:
         name: Campaign folder name (kebab-case recommended)
         ruleset: One of VALID_RULESETS
+        setting: Optional setting name (e.g. 'dark-sun'). Writes setting.txt if provided.
         campaigns_dir: Override for campaigns directory (used in tests)
 
     Returns:
@@ -108,6 +115,9 @@ def create_campaign(name: str, ruleset: str, campaigns_dir: Path = None) -> Path
     # Write files
     (campaign_path / "ruleset.txt").write_text(ruleset + "\n")
 
+    if setting:
+        (campaign_path / "setting.txt").write_text(setting + "\n")
+
     title = name.replace("-", " ").title()
     (campaign_path / "campaign.md").write_text(CAMPAIGN_MD_TEMPLATE.format(title=title))
 
@@ -127,10 +137,15 @@ def main():
         "ruleset",
         help=f"Ruleset to use. Options: {', '.join(VALID_RULESETS)}",
     )
+    parser.add_argument(
+        "--setting",
+        default=None,
+        help="Setting name (e.g. dark-sun). Creates setting.txt linking to settings/<name>/.",
+    )
     args = parser.parse_args()
 
     try:
-        path = create_campaign(args.name, args.ruleset)
+        path = create_campaign(args.name, args.ruleset, setting=args.setting)
         print(f"✓ Campaign created at {path}")
         print(f"\nNext steps:")
         print(f"  1. Edit campaigns/{args.name}/campaign.md with your premise and arc")

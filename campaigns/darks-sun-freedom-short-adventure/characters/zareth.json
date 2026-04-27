@@ -1,0 +1,100 @@
+{
+  "name": "Zareth",
+  "player": "DM",
+  "class": "Arcanist",
+  "subclass": "Defiler",
+  "level": 3,
+  "race": "Human",
+  "background": "Veiled Alliance (suspected)",
+  "alignment": "Chaotic Neutral",
+  "xp": 0,
+  "xp_next_level": 0,
+  "ability_scores": {
+    "strength": 8,
+    "dexterity": 14,
+    "constitution": 12,
+    "intelligence": 18,
+    "wisdom": 16,
+    "charisma": 14
+  },
+  "proficiency_bonus": 2,
+  "hp": {
+    "current": 14,
+    "max": 14,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": 3,
+    "remaining": 3,
+    "die": "d6"
+  },
+  "armor_class": 12,
+  "speed": 30,
+  "initiative": 4,
+  "saving_throws": {
+    "proficient": ["intelligence", "wisdom"]
+  },
+  "skills": {
+    "proficient": ["arcana", "history", "insight", "deception"],
+    "expertise": []
+  },
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "spell_slots": {
+    "1st": { "max": 4, "remaining": 2 },
+    "2nd": { "max": 2, "remaining": 2 }
+  },
+  "class_resources": {
+    "arcane_recovery": { "max": 1, "remaining": 0 }
+  },
+  "attacks": [
+    {
+      "name": "Dagger",
+      "type": "melee/ranged",
+      "attack_bonus": 4,
+      "damage": "1d4+2",
+      "damage_type": "piercing"
+    }
+  ],
+  "spells_known": [
+    "Sleep (1st) — cast in Scene 1 on guards at the arena gate",
+    "Fog Cloud (2nd) — cast in Scene 2 to cover escape in the Market",
+    "Detect Magic",
+    "Mage Hand",
+    "Prestidigitation",
+    "Magic Missile (1st)",
+    "Shield (1st)"
+  ],
+  "equipment": [
+    "Dagger",
+    "Worn scholar's robes",
+    "Hidden spellbook (encrypted)",
+    "Small obsidian focus"
+  ],
+  "features": [
+    "Arcane Recovery (1/day — recover spell slots on short rest)",
+    "Defiler: Arcane defilement — when casting, may drain life from surrounding terrain for +1 spell level effect (leaves dead zone)",
+    "NPC: DM plays Zareth in combat and dialogue"
+  ],
+  "proficiencies": {
+    "armor": [],
+    "weapons": ["dagger", "quarterstaff", "light crossbow"],
+    "tools": [],
+    "languages": ["Common", "Elven", "Ancient Athasian (reading)"]
+  },
+  "personality": {
+    "traits": "Calm and deliberate. Observes before speaking. Never explains more than necessary.",
+    "ideals": "Knowledge is the only power that can't be taken from you by force.",
+    "bonds": "Running from Tyr's templars — but for what exactly? He hasn't said.",
+    "flaws": "Will sacrifice anyone if the alternative is his capture."
+  },
+  "secrets": [
+    "The templars want him because he witnessed something in the Golden Tower the night Kalak died",
+    "He may have connections to the Veiled Alliance — or may be using them",
+    "His spellbook contains a map fragment that others want"
+  ],
+  "notes": "NPC — controlled by DM. Joined party at start (in the arena, unstated origin). Cast Sleep (Scene 1) on gate guards — 2 slots spent. Cast Fog Cloud (Scene 2) — 1 slot spent (2nd level). Examined with detect magic by someone (Scene 3, pass). Revealed as templar fugitive; accepted by party. Motives deliberately ambiguous."
+}

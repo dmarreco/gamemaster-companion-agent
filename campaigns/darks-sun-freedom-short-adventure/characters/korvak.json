@@ -1,0 +1,92 @@
+{
+  "name": "Korvak",
+  "player": "Player 2",
+  "class": "Barbarian",
+  "subclass": "Path of the Berserker (Dark Sun)",
+  "level": 1,
+  "race": "Half-Giant",
+  "background": "Gladiator",
+  "alignment": "Chaotic Neutral",
+  "xp": 150,
+  "xp_next_level": 300,
+  "ability_scores": {
+    "strength": 20,
+    "dexterity": 12,
+    "constitution": 18,
+    "intelligence": 8,
+    "wisdom": 10,
+    "charisma": 14
+  },
+  "proficiency_bonus": 2,
+  "hp": {
+    "current": 7,
+    "max": 15,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": 1,
+    "remaining": 1,
+    "die": "d12"
+  },
+  "armor_class": 14,
+  "speed": 30,
+  "initiative": 1,
+  "saving_throws": {
+    "proficient": ["strength", "constitution"]
+  },
+  "skills": {
+    "proficient": ["athletics", "intimidation"],
+    "expertise": []
+  },
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "spell_slots": {},
+  "class_resources": {
+    "rage": { "max": 2, "remaining": 2, "bonus_damage": 2 }
+  },
+  "attacks": [
+    {
+      "name": "Greatclub (improvised)",
+      "type": "melee",
+      "attack_bonus": 7,
+      "damage": "1d8+5",
+      "damage_type": "bludgeoning",
+      "properties": ["two-handed", "found in arena"]
+    },
+    {
+      "name": "Unarmed Strike",
+      "type": "melee",
+      "attack_bonus": 7,
+      "damage": "1d4+5",
+      "damage_type": "bludgeoning",
+      "properties": ["Half-Giant size advantage"]
+    }
+  ],
+  "equipment": [
+    "Improvised greatclub (arena weapon)",
+    "Leather scraps (partial armor)",
+    "Water wagon (stolen — belongs to the group)"
+  ],
+  "features": [
+    "Rage: +2 damage, advantage on STR checks/saves, resistance to physical damage (2/rest)",
+    "Unarmored Defense: AC = 10 + DEX mod + CON mod when not wearing armor",
+    "Half-Giant: Large creature — can carry/move objects others cannot",
+    "Half-Giant: Powerful Build — counts as one size larger for carrying capacity"
+  ],
+  "proficiencies": {
+    "armor": ["light", "medium", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "languages": ["Giant", "Common (crude)"]
+  },
+  "personality": {
+    "traits": "Speaks loudly. Acts first, thinks later. Surprisingly gentle with the weak.",
+    "ideals": "Strength is earned, not given. Prove it in front of me or don't bother.",
+    "bonds": "Was sold into slavery as a child. Does not remember his tribe's name.",
+    "flaws": "Will immediately try to lift, break, or eat anything interesting."
+  },
+  "notes": "Stats reconstructed from session log — verify with player. STR 20 (Half-Giant racial max). Took 8 damage from archers in Scene 3. HP currently 7/15. Pulled water wagon with STR roll 18 (Scene 2) — success."
+}

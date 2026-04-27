@@ -7,15 +7,23 @@ NPC dialogue, session recaps, encounter hooks, and world continuity.
 
 On every invocation, read these files in order:
 
-1. `active-campaign.txt` → get campaign name
+1. `active-campaign.txt` → get campaign name (`<name>`)
 2. `campaigns/<name>/campaign.md` → premise, arc, tone
 3. `campaigns/<name>/ruleset.txt` → which game system (affects tone/setting norms)
-4. The **last 2 session logs** in `campaigns/<name>/sessions/` (most recent first)
-5. `campaigns/<name>/world/npcs.md`
-6. `campaigns/<name>/world/locations.md`
-7. `campaigns/<name>/world/factions.md`
+4. `campaigns/<name>/setting.txt` → setting name (`<setting>`), if present
+5. If `<setting>` exists:
+   - `settings/<setting>/world/npcs.md` → canon setting NPCs and figures
+   - `settings/<setting>/world/locations.md` → canon setting locations
+   - `settings/<setting>/world/factions.md` → canon setting factions
+   - Any relevant files in `settings/<setting>/source/` (large; search by keyword, don't read whole files)
+6. The **last 2 session logs** in `campaigns/<name>/sessions/` (most recent first)
+7. `campaigns/<name>/world/npcs.md` → instance-specific NPCs (overrides/extends setting canon)
+8. `campaigns/<name>/world/locations.md` → instance-specific locations visited
+9. `campaigns/<name>/world/factions.md` → instance-specific faction relationships
 
-Loading all 7 gives you the context window you need. Do not skip any.
+When the same entity appears in both setting and campaign world files, the campaign instance version takes precedence (it reflects what actually happened in this campaign).
+
+Loading all applicable files gives you the context window you need. Do not skip any.
 
 ## What you help with
 

@@ -1,0 +1,92 @@
+{
+  "name": "Drak",
+  "player": "Player 3",
+  "class": "Fighter",
+  "subclass": "Gladiator (Dark Sun)",
+  "level": 1,
+  "race": "Mul",
+  "background": "Gladiator",
+  "alignment": "Neutral",
+  "xp": 150,
+  "xp_next_level": 300,
+  "ability_scores": {
+    "strength": 16,
+    "dexterity": 14,
+    "constitution": 20,
+    "intelligence": 10,
+    "wisdom": 12,
+    "charisma": 18
+  },
+  "proficiency_bonus": 2,
+  "hp": {
+    "current": 10,
+    "max": 14,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": 1,
+    "remaining": 1,
+    "die": "d10"
+  },
+  "armor_class": 15,
+  "speed": 30,
+  "initiative": 9,
+  "saving_throws": {
+    "proficient": ["strength", "constitution"]
+  },
+  "skills": {
+    "proficient": ["athletics", "intimidation", "perception"],
+    "expertise": []
+  },
+  "conditions": [],
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "spell_slots": {},
+  "class_resources": {
+    "second_wind": { "max": 1, "remaining": 0 }
+  },
+  "attacks": [
+    {
+      "name": "Lance",
+      "type": "melee",
+      "attack_bonus": 5,
+      "damage": "1d8+3",
+      "damage_type": "piercing",
+      "properties": ["reach", "requires one hand if mounted", "disadvantage vs adjacent targets"]
+    },
+    {
+      "name": "Unarmed Strike",
+      "type": "melee",
+      "attack_bonus": 5,
+      "damage": "1d4+3",
+      "damage_type": "bludgeoning"
+    }
+  ],
+  "equipment": [
+    "Lance (bone-tipped)",
+    "Studded leather (arena issue)",
+    "Short sword (looted from guard)"
+  ],
+  "features": [
+    "Fighting Style: Defense (+1 AC while wearing armor)",
+    "Second Wind (1d10+1 healing, 1/rest) — SPENT",
+    "Mul: Does not need to sleep (only 4h rest required)",
+    "Mul: Tireless — advantage on CON saves vs exhaustion",
+    "High Initiative: went first in Scene 1 (rolled 9)"
+  ],
+  "proficiencies": {
+    "armor": ["light", "medium", "heavy", "shields"],
+    "weapons": ["simple", "martial"],
+    "tools": [],
+    "languages": ["Common", "Dwarvish (partial)"]
+  },
+  "personality": {
+    "traits": "Stoic. Economical with words. Efficient with violence.",
+    "ideals": "Survive. Everything else is negotiable.",
+    "bonds": "Is Mul — half-dwarf, half-human. Accepted by neither. Owes nothing to anyone.",
+    "flaws": "Pushes through pain until collapse. Won't ask for help."
+  },
+  "notes": "Stats reconstructed from session log — verify with player. Drak took 18 total damage in Scene 3 — currently at 10 HP (stated explicitly in log). Second Wind was spent. CON 20 reflects Mul racial endurance. Initiative 9 (highest of the party, Scene 1). Uses d8 weapon (lance, confirmed in log)."
+}
