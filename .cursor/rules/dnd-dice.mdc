@@ -1,0 +1,12 @@
+---
+description: Attach the dice skill when the DM explicitly asks the agent to roll dice
+globs:
+alwaysApply: false
+---
+
+Attach and follow `skills/dice/SKILL.md` when the user says any of:
+- "roll dice", "agent roll", "you roll"
+- "roll [notation]" (e.g. "roll 3d6", "roll for initiative")
+- "roll on the [table name] table"
+
+Do NOT attach this skill for physical table rolls that the DM is just reporting.
