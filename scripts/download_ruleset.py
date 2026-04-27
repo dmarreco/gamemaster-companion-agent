@@ -1,14 +1,39 @@
 #!/usr/bin/env python3
 """
-Downloads SRD ruleset data from the Open5e API (https://open5e.com).
+Downloads SRD ruleset data from the Open5e API and formats it as local markdown files.
 
-All data is from the D&D 5e System Reference Document (SRD 5.1),
-released under Creative Commons Attribution 4.0 International (CC BY 4.0)
-by Wizards of the Coast.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DATA SOURCE & LICENSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+All content downloaded by this script originates from the D&D 5e System
+Reference Document (SRD 5.1), published by Wizards of the Coast LLC.
+
+  License:  Creative Commons Attribution 4.0 International (CC BY 4.0)
+            https://creativecommons.org/licenses/by/4.0/
+
+  Source:   https://dnd.wizards.com/resources/systems-reference-document
+            Served via Open5e (https://open5e.com) — an open-source project
+            that provides a free JSON API over the SRD content.
+
+  Notice:   "Dungeons & Dragons" and "D&D" are trademarks of Wizards of the
+            Coast LLC. This script is not affiliated with or endorsed by
+            Wizards of the Coast.
+
+The downloaded files are intentionally excluded from this repository's git
+history (see .gitignore). They are reference-only local copies for use by the
+AI skills in this project. Do not redistribute them as standalone files without
+retaining this attribution.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Usage:
     python3 scripts/download_ruleset.py dnd5e-2014
-    python3 scripts/download_ruleset.py dnd5e-2024  # same SRD data; 2024 diffs overlay on top
+    python3 scripts/download_ruleset.py dnd5e-2024  # same SRD base; add 2024-specific
+                                                    # content manually as supplements
+
+Requirements:
+    pip install requests
 """
 
 import argparse
@@ -294,8 +319,17 @@ def fmt_equipment(weapons: list, armor: list) -> str:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+ATTRIBUTION_NOTICE = """
+Content: D&D 5e SRD 5.1 — Wizards of the Coast LLC
+License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+Source:  https://open5e.com / https://dnd.wizards.com/resources/systems-reference-document
+Note:    Downloaded files are gitignored and for local AI skill use only.
+"""
+
+
 def download(ruleset: str, out_dir: Path) -> None:
-    print(f"\nDownloading SRD data for '{ruleset}' → {out_dir}\n")
+    print(ATTRIBUTION_NOTICE)
+    print(f"Downloading SRD data for '{ruleset}' → {out_dir}\n")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("📖 Conditions...")
