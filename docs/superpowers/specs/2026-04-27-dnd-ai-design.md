@@ -14,23 +14,25 @@ Cursor agent/chat. No custom UI. The DM invokes skills by name in conversation. 
 
 ```
 dnd-ai/
+├── active-campaign.txt      # Single line: name of the active campaign folder
 ├── rulesets/
 │   ├── dnd5e-2014/          # SRD markdown/JSON for 5e 2014
 │   ├── dnd5e-2024/          # SRD markdown/JSON for 5e 2024 (primary)
 │   └── pathfinder2e/        # SRD markdown/JSON for PF2e
 ├── campaigns/
-│   └── <campaign-name>/
-│       ├── campaign.md      # Premise, world lore, arc overview
-│       ├── ruleset.txt      # Single line: e.g. "dnd5e-2024"
-│       ├── sessions/
-│       │   └── session-NNN.md   # Append-only narrative log per session
-│       ├── world/
-│       │   ├── npcs.md          # NPC roster, motivations, current status
-│       │   ├── locations.md     # Places visited, secrets revealed
-│       │   └── factions.md      # Factions, their goals, relationships
-│       └── characters/
-│           ├── <name>.json      # Machine-readable character sheet (source of truth)
-│           └── <name>.md        # Human-readable companion / flavor notes
+│   ├── <active-campaign>/
+│   │   ├── campaign.md      # Premise, world lore, arc overview
+│   │   ├── ruleset.txt      # Single line: e.g. "dnd5e-2024"
+│   │   ├── sessions/
+│   │   │   └── session-NNN.md   # Append-only narrative log per session
+│   │   ├── world/
+│   │   │   ├── npcs.md          # NPC roster, motivations, current status
+│   │   │   ├── locations.md     # Places visited, secrets revealed
+│   │   │   └── factions.md      # Factions, their goals, relationships
+│   │   └── characters/
+│   │       ├── <name>.json      # Machine-readable character sheet (source of truth)
+│   │       └── <name>.md        # Human-readable companion / flavor notes
+│   └── <other-campaign>/    # Paused or completed campaigns coexist here
 ├── skills/
 │   ├── rules/SKILL.md
 │   ├── story/SKILL.md
@@ -39,6 +41,21 @@ dnd-ai/
 └── docs/
     └── superpowers/specs/
 ```
+
+## Active Campaign & Multi-Campaign Support
+
+Multiple campaigns can coexist under `campaigns/` in any state (active, paused, completed). The file `active-campaign.txt` at the repo root contains a single line — the folder name of the currently active campaign (e.g., `curse-of-strahd`). All four skills read this file on invocation to know which campaign directory to load. Campaign contexts are fully isolated; switching never contaminates state.
+
+**Starting a new campaign:**
+1. Create `campaigns/<new-name>/` with `campaign.md`, `ruleset.txt`, and empty `sessions/`, `world/`, `characters/` directories.
+2. Update `active-campaign.txt` to the new campaign name.
+3. Commit.
+
+**Switching to a paused campaign:**
+1. Update `active-campaign.txt` to the target campaign name.
+2. Commit.
+
+The git log on each campaign folder is its independent history. Switching is a single-line file change.
 
 ## The Four Skills
 
@@ -122,7 +139,7 @@ Invoked explicitly by the DM when they want the agent to roll instead of the phy
 ## Out of Scope (v1)
 
 - Dice rolling UI or automation (physical table; `dice` skill is opt-in only)
-- Multi-campaign parallel state management
+- Parallel multi-campaign state (multiple campaigns can exist, but only one is active at a time)
 - Vector / RAG semantic search over rulebooks
 - Custom web UI or player-facing interface
 - Online sync or multiplayer state sharing
