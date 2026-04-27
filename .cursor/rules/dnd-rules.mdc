@@ -1,0 +1,15 @@
+---
+description: Attach the rules skill for D&D/PF2e rules questions and adjudication
+globs:
+alwaysApply: false
+---
+
+Attach and follow `skills/rules/SKILL.md` when the user asks about:
+- How a spell, ability, or action works
+- Combat rules (actions, reactions, bonus actions, movement)
+- Conditions and their effects
+- Grapple, shove, or special attack rules
+- Class features, racial traits, feats
+- Saving throws, skill checks, DCs
+- Any "can I do X?" or "what happens when Y?" question about rules
+- Edge cases, rule interactions, or clarifications
