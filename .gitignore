@@ -10,3 +10,27 @@ build/
 .pytest_cache/
 venv/
 .venv/
+
+# Ruleset SRD data files — third-party content (CC BY 4.0), not committed to git
+# Run: python3 scripts/download_ruleset.py dnd5e-2014
+rulesets/dnd5e-2014/conditions.md
+rulesets/dnd5e-2014/rules.md
+rulesets/dnd5e-2014/spells.md
+rulesets/dnd5e-2014/monsters.md
+rulesets/dnd5e-2014/classes.md
+rulesets/dnd5e-2014/equipment.md
+rulesets/dnd5e-2014/tables/
+rulesets/dnd5e-2024/conditions.md
+rulesets/dnd5e-2024/rules.md
+rulesets/dnd5e-2024/spells.md
+rulesets/dnd5e-2024/monsters.md
+rulesets/dnd5e-2024/classes.md
+rulesets/dnd5e-2024/equipment.md
+rulesets/dnd5e-2024/tables/
+rulesets/pathfinder2e/conditions.md
+rulesets/pathfinder2e/rules.md
+rulesets/pathfinder2e/spells.md
+rulesets/pathfinder2e/monsters.md
+rulesets/pathfinder2e/classes.md
+rulesets/pathfinder2e/equipment.md
+rulesets/pathfinder2e/tables/
